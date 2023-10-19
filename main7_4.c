@@ -10,18 +10,16 @@ void Input(int arr[], int len)
 
 void sort_arr(int arr[], int len)
 {
-    int tmp1, tmp2;
-    
+    int tmp;
     for (int i = 0; i < len - 1; i++)
     {
         for(int j = 0 ; j < len - i - 1 ; j++)
         {  
-            tmp1 = arr[j];
-            tmp2 = arr[j + 1];
-            if (tmp1 % 10 > tmp2 % 10)
+            tmp = arr[j];
+            if (tmp % 10 > arr[j + 1] % 10)
             {
-                arr[j] = tmp2;
-                arr[j + 1] = tmp1;
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
             }
         }
     }
@@ -36,11 +34,9 @@ void Print_arr(int arr[], int len)
 int main()
 {
     int len = 10;
-    int arr[len],rra[len];
+    int arr[len];
     Input(arr, len);
-    sort_arr(arr, rra, len);
+    sort_arr(arr, len);
     Print_arr(arr, len);
-    printf("\n");
-    Print_arr(rra, len);
     return 0;
 }
