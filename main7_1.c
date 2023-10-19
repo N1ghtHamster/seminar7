@@ -11,11 +11,11 @@ void input(int arr[], int len)
 float average(int arr[], int len)
 {
     int sum;
-    for(int i = 0; i <len; i++)
+    for(int i = 0; i < len; i++)
     {
         sum+=arr[i];
     }
-    return (float)sum/len;
+    return (float)sum / len;
 }
 
 int main()
