@@ -8,18 +8,22 @@ void Input(int arr[], int len)
     }
 }
 
-void find_arr(int arr[], int rra[], int len)
+void sort_arr(int arr[], int len)
 {
-    int tmp;
-    tmp = arr[0] % 10;
-    for (int i = 0; i < len; i++)
+    int tmp1, tmp2;
+    
+    for (int i = 0; i < len - 1; i++)
     {
-        if (tmp > arr[i] % 10)
-        {
-            tmp = arr[i] % 10;
-            rra[i] = arr[i];
+        for(int j = 0 ; j < len - i - 1 ; j++)
+        {  
+            tmp1 = arr[j];
+            tmp2 = arr[j + 1];
+            if (tmp1 % 10 > tmp2 % 10)
+            {
+                arr[j] = tmp2;
+                arr[j + 1] = tmp1;
+            }
         }
-        printf("%d \n", tmp);
     }
 }
 
@@ -34,7 +38,7 @@ int main()
     int len = 10;
     int arr[len],rra[len];
     Input(arr, len);
-    find_arr(arr, rra, len);
+    sort_arr(arr, rra, len);
     Print_arr(arr, len);
     printf("\n");
     Print_arr(rra, len);
